@@ -1,0 +1,85 @@
+\usepackage{enumerate}
+
+% Comando para chamar este arquivo em outros trabalhos.
+\newcommand{\pacote}{
+\input{D:/Diciplinas/Latex/Meu_pacote_Latex/meuscomandos.tex}
+}
+
+% Comandos personalizados
+
+% Cabeçalhos 
+\newcommand{\cabeca}[4]{
+	\begin{tabular}{cc}
+		\multirow{3} * {\includegraphics[scale=1.5]{#1}} & \Large #2 \\  
+		& \Large #3 \\ 
+		& \Large #4 \\ 
+	\end{tabular} 
+	\vspace{2cm}
+} 
+
+%items da identificação
+\newcommand{\meuitem}[2]{
+	\item \Large \textbf{#1:} #2
+}
+
+% Lista de imagens e fotos.
+\newcommand{\listafotos}[2]{
+	\Large \textbf{#1: #2}\\
+}
+
+% inserção de fotografias
+\newcommand{\foto}[5]{
+	\begin{figure}[!htb]
+		\centering
+		\caption{\textbf{#1}}
+		\includegraphics[scale=#2]{#3}\\
+		{\footnotesize Fonte: #4}
+		\label{#5}
+	\end{figure}
+}
+
+% Contadores 
+%para número de questões
+\newcounter{questao}
+\setcounter{questao}{1}
+
+% Para o número de definições
+\newcounter{definicao}
+\setcounter{definicao}{1}
+%------------------------------------------------------
+
+%Comandos automatizados 
+
+%para questões
+\newcommand{\quest}{
+	\noindent \textbf{Questão \thequestao: \stepcounter{questao}}}
+
+% Para definições
+\newcommand{\definicao}[2]{
+	\noindent\textbf{Definição \thedefinicao:}\\ \stepcounter{definicao}
+	\textit{\textbf{#1} #2}
+}
+%--------------------------------------------------------------------------------
+
+% Ajustes dos ambientes matemáticos
+\everymath{\displaystyle}
+
+%teste
+
+\newcommand{\teste}{
+	\textbf{Funcionou!}
+}
+
+\newcommand{\optabertas}[4]{
+	\vspace{0.25cm}
+	\begin{enumerate}[(a)]
+		\item #1
+		\vspace{1cm}
+		\item #2
+		\vspace{1cm}
+		\item #3
+		\vspace{1cm}
+		\item #4
+		\vspace{1cm}
+	\end{enumerate}
+}
